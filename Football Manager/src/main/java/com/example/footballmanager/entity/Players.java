@@ -3,6 +3,7 @@ package com.example.footballmanager.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,10 +19,10 @@ public class Players {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
-    @Column(name = "players_id", nullable = false, updatable = false)
+    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "fullName")
+    @Column(name = "full_name")
     private String fullName;
 
     @Column(name = "age")
@@ -29,4 +30,7 @@ public class Players {
 
     @Column(name = "experience")
     private Integer experience;
+
+    @Column(name = "teams_id")
+    private Long teamId;
 }

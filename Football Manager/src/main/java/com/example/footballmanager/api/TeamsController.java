@@ -41,4 +41,11 @@ public class TeamsController {
     public TeamsDto deleteTeam(@PathVariable("id") final Long teamId) {
         return service.deleteTeam(teamId);
     }
+
+//    @Operation(summary = "Add Player to Team")
+//    @ResponseStatus(HttpStatus.OK)
+//    @PutMapping("/teams/{team-id}:{player-id}")
+//    public TeamsDto addPlayerToTeam(@PathVariable("team-id") Long teamId, @PathVariable("player-id") Long playerId) {
+//        return service.addPlayerToTeam(teamId, playerId);
+//    }
 }

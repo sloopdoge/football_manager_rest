@@ -5,12 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 @Data
 @Builder
 public class PlayersDto {
 
-    @JsonProperty("players_id")
+    @Null
+    @JsonProperty("id")
     private Long id;
 
     @NotNull
@@ -24,4 +26,7 @@ public class PlayersDto {
     @NotNull
     @JsonProperty("experience")
     private Integer experience;
+
+    @JsonProperty("teams_id")
+    private Long teamId;
 }

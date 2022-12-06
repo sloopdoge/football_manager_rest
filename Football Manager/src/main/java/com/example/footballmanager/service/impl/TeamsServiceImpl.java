@@ -2,6 +2,8 @@ package com.example.footballmanager.service.impl;
 
 import com.example.footballmanager.dto.PlayersDto;
 import com.example.footballmanager.dto.TeamsDto;
+import com.example.footballmanager.entity.Players;
+import com.example.footballmanager.exception.EntityAlreadyInUseException;
 import com.example.footballmanager.exception.EntityDoesNotExistException;
 import com.example.footballmanager.mapper.PlayersMapper;
 import com.example.footballmanager.mapper.TeamsMapper;
@@ -10,6 +12,8 @@ import com.example.footballmanager.repository.TeamsRepository;
 import com.example.footballmanager.service.TeamsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -63,15 +67,4 @@ public class TeamsServiceImpl implements TeamsService {
 
         return teamsMapper.convert(team.get());
     }
-
-    @Override
-    public TeamsDto addPlayerToTeam(Long teamId, Long playerId) {
-        return null;
-    }
-
-    @Override
-    public TeamsDto transferPlayer(Long teamId, Long playerId) {
-        return null;
-    }
-
 }

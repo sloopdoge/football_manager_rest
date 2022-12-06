@@ -8,6 +8,6 @@ public interface TeamsService {
     TeamsDto getTeam(Long teamId);
     TeamsDto updateTeam(TeamsDto teamsDto, Long teamId);
     TeamsDto deleteTeam(Long teamId);
-    TeamsDto addPlayerToTeam(Long teamId, Long playerId);
-    TeamsDto transferPlayer(Long teamId, Long playerId);
+//    TeamsDto addPlayerToTeam(Long teamId, Long playerId);
+//    TeamsDto transferPlayer(Long teamId, Long playerId);
 }

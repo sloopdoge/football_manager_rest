@@ -26,10 +26,13 @@ public class Teams {
     private String title;
 
     @Column(name = "account")
-    private Long account;
+    private Double account;
+
+    @Column(name = "tax")
+    private Double tax;
 
     @Column(name = "members")
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinTable(name = "members", joinColumns = @JoinColumn(name = "teams_id"),
     inverseJoinColumns = @JoinColumn(name = "players_id"))
     private List<Players> members;

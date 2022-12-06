@@ -3,15 +3,15 @@ package com.example.footballmanager.api;
 import com.example.footballmanager.dto.PlayersDto;
 import com.example.footballmanager.service.PlayersService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 public class PlayersController {
-    @Autowired
     private final PlayersService service;
 
     @Operation(summary = "Create Player")
@@ -40,5 +40,12 @@ public class PlayersController {
     @DeleteMapping("/players/{id}")
     public PlayersDto deletePlayer(@PathVariable("id") final Long playerId) {
         return service.deletePlayer(playerId);
+    }
+
+    @Operation(summary = "Add Player to Team")
+    @ResponseStatus(HttpStatus.OK)
+    @PatchMapping("/players/{team-id}:{player-id}")
+    public PlayersDto addPlayerToTeam(@PathVariable("team-id") Long teamId, @PathVariable("player-id") Long playerId) {
+        return service.addPlayerToTeam(playerId, teamId);
     }
 }

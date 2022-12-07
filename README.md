@@ -1,1 +1,1 @@
-Simple Football Manager with REST API with CRUD operations
+Simple Football Manager REST API with CRUD operations
